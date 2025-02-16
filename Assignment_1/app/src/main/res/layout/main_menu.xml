@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_menu_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/_025_02_10"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="411dp"
+        android:layout_height="221dp"
+        android:contentDescription="@string/logo"
+        android:src="@drawable/trivia_bg_rmv" />
+
+    <Button
+        android:id="@+id/buttonStartGame"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:text="Start Game" />
+
+    <Button
+        android:id="@+id/buttonShowScore"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:text="Show Score" />
+
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:text="Back to Welcome Screen"/>
+</LinearLayout>

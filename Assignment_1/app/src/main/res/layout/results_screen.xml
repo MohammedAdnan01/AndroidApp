@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/results_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#bec3c6"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/scoreText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="YOUR SCORE IS"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="SCORE"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/return_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/score"
+        android:layout_marginTop="30dp"
+        android:background="@color/purple_200"
+        android:text="RETURN"
+        android:textSize="18dp" />
+
+    <Button
+        android:id="@+id/review_qui_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/return_btn"
+        android:layout_marginTop="30dp"
+        android:background="@color/purple_200"
+        android:text="REVIEW ANSWERS"
+        android:textSize="18dp" />
+
+
+</LinearLayout>
