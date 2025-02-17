@@ -18,69 +18,102 @@ class QuizActivityReview : AppCompatActivity() {
     private lateinit var optionsContainer: LinearLayout
     private lateinit var nextButton: Button
 
-    private val questions = arrayOf("Which company owns Android?",
-        "Which one is not a programming language?",
-        "Which platform is known for browsing videos?",
-        "Which company owns iPhone?",
-        "What is the currency of the United States?",
-        "Who wrote the Harry Potter series?",
-        "What is the capital of Japan?",
-        "Who painted the Mona Lisa?",
-        "What is the chemical symbol for water?",
-        "Who discovered gravity?",
-        "What is the capital of France?",
-        "What is the largest ocean on Earth?",
-        "Who was the first man to walk on the moon?",
-        "What is the square root of 144?",
-        "What is the chemical symbol for gold?",
-        "Who wrote the play 'Hamlet'?",
-        "What is the largest mammal in the world?",
-        "Who painted the Starry Night?",
-        "What is the capital of Australia?",
-        "What is the chemical symbol for oxygen?")
-    private val options = arrayOf(arrayOf("Google", "Apple", "Nokia"),
-        arrayOf("Java", "Kotlin", "Notepad"),
-        arrayOf("Facebook", "WhatsApp", "YouTube"),
-        arrayOf("Google", "Apple", "Nokia"),
-        arrayOf("Dollar", "Euro", "Pound"),
-        arrayOf("J.K. Rowling", "Stephen King", "George Orwell"),
-        arrayOf("Tokyo", "Beijing", "Seoul"),
-        arrayOf("Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh"),
-        arrayOf("H2O", "CO2", "NaCl"),
-        arrayOf("Isaac Newton", "Albert Einstein", "Galileo Galilei"),
-        arrayOf("Paris", "Berlin", "London"),
-        arrayOf("Pacific Ocean", "Atlantic Ocean", "Indian Ocean"),
-        arrayOf("Neil Armstrong", "Buzz Aldrin", "Michael Collins"),
-        arrayOf("12", "14", "16"),
-        arrayOf("Au", "Ag", "Fe"),
-        arrayOf("William Shakespeare", "Charles Dickens", "Jane Austen"),
-        arrayOf("Blue Whale", "African Elephant", "Giraffe"),
-        arrayOf("Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci"),
-        arrayOf("Canberra", "Sydney", "Melbourne"),
-        arrayOf("O", "O2", "CO2")
+    private val questions = arrayOf(
+        "Which is the largest ocean on Earth?",
+        "Which country is known as the “Land of the Rising Sun”?",
+        "Which river is the longest in the world?",
+        "What is the capital city of Australia?",
+        "Mount Everest, the highest peak in the world, is located in which mountain range?",
+        "Which continent is the largest by land area?",
+        "Which country is known as “The Land Down Under”?",
+        "What is the largest desert in the world?",
+        "Which country is both an island and a continent?",
+        "Which city is located on two continents?",
+        "The Great Barrier Reef, the world’s largest coral reef system, is located in which country?",
+        "Which country is known as the “Land of Fire and Ice”?",
+        "Which is the longest river in Europe?",
+        "Which is the smallest continent by land area?",
+        "What is the capital city of Canada?",
+        "Which country is home to the Amazon Rainforest?",
+        "Which African country is known as the “Cradle of Humankind”",
+        "Which is the largest lake in Africa?",
+        "What is the capital city of Spain?",
+        "Which country is known as “The Land of a Thousand Lakes”?",
+        "The Galapagos Islands, known for their unique wildlife, belong to which country?",
+        "Which country is the largest producer of oil in the world?",
+        "The Taj Mahal, a famous UNESCO World Heritage Site, is located in which country?",
+        "Which country is known for its fjords, volcanoes, and geothermal springs?",
+        "Which is the largest island in the Mediterranean Sea?",
+        "What is the capital city of Brazil?",
+        "Which country is known for its tulips, windmills, and cycling culture?",
+        "The Great Wall, one of the world’s most famous landmarks, is located in which country?",
+        "Which country is located in both Europe and Asia?",
+        "What is the highest mountain in North America?")
+
+    private val options = arrayOf(
+        arrayOf("Atlantic Ocean","Pacific Ocean","Indian Ocean","Arctic Ocean"),
+        arrayOf("China", "Japan", "India","South Korea"),
+        arrayOf("Nile River", "Amazon River", "Mississippi River","Yangtze River"),
+        arrayOf("Sydney", "Melbourne", "Canberra","Perth"),
+        arrayOf("Andes", "Himalayas", "Alps","Rocky Mountains"),
+        arrayOf("Africa", "Asia", "North America", "South America"),
+        arrayOf("New Zealand", "Australia", "Fiji", "Papua New Guinea"),
+        arrayOf("Sahara Desert", "Gobi Desert", "Arabian Desert", "Antarctic Desert"),
+        arrayOf("Madagascar", "Greenland", "Australia", "Iceland"),
+        arrayOf("Istanbul", "Rome", "Cairo", "Moscow"),
+        arrayOf("Indonesia", "Philippines", "Australia", "Maldives"),
+        arrayOf("Iceland", "Greece", "Japan", "New Zealand"),
+        arrayOf("Rhine River", "Danube River", "Volga River", "Seine River"),
+        arrayOf("Europe", "Africa", "Antarctica", "South America"),
+        arrayOf("Ottawa", "Toronto", "Montreal","Vancouver"),
+        arrayOf("Brazil", "Colombia", "Peru", "Ecuador"),
+        arrayOf("Kenya", "South Africa", "Egypt", "Ethiopia"),
+        arrayOf("Lake Victoria", "Lake Tanganyika", "Lake Malawi", "Lake Chad"),
+        arrayOf("Barcelona", "Seville", "Madrid", "Valencia"),
+        arrayOf("Sweden", "Norway", "Finland", "Canada"),
+        arrayOf("Ecuador", "Colombia", "Peru", "Costa Rica"),
+        arrayOf("Saudi Arabia", "Russia", "United States", "Canada"),
+        arrayOf("India", "China", "Pakistan", "Nepal"),
+        arrayOf("Norway", "Iceland", "New Zealand", "Chile"),
+        arrayOf("Sicily", "Cyprus", "Sardinia", "Crete"),
+        arrayOf("Rio de Janeiro", "São Paulo", "Brasília", "Salvador"),
+        arrayOf("Netherlands", "Belgium", "Denmark", "Switzerland"),
+        arrayOf("China", "Japan", "South Korea", "Mongolia"),
+        arrayOf("Turkey", "Greece", "Italy", "Ukraine"),
+        arrayOf("Mount Kilimanjaro", "Mount Everest", "Denali (Mount McKinley)", "Mount Fuji")
     )
 
     var correctAnswers = arrayOf(
-        1, // "Google" (a)
-        3, // "Notepad" (b)
-        3, // "YouTube" (c)
-        1, // "Apple" (a)
-        1, // "Dollar" (a)
-        1, // "J.K. Rowling" (a)
-        1, // "Tokyo" (a)
-        1, // "Leonardo da Vinci" (a)
-        1, // "H2O" (a)
-        1, // "Isaac Newton" (a)
-        1, // "Paris" (a)
-        1, // "Pacific Ocean" (a)
-        1, // "Neil Armstrong" (a)
-        1, // "12" (a)
-        1, // "Au" (a)
-        1, // "William Shakespeare" (a)
-        1, // "Blue Whale" (a)
-        1, // "Vincent van Gogh" (a)
-        1, // "Canberra" (a)
-        2  // "O2" (c)
+        2, // (b)
+        2, // (b)
+        1, // (a)
+        3, // (c)
+        2, // (b)
+        2, // (b)
+        2, // (b)
+        1, // (a)
+        3, // (c)
+        1, // (a)
+        3, // (c)
+        1, // (a)
+        3, // (c)
+        3, // (c)
+        1, // (a)
+        1, // (a)
+        2, // (b)
+        1, // (a)
+        3, // (c)
+        3, // (c)
+        1, // (a)
+        1, // (a)
+        1, // (a)
+        2, // (b)
+        1, // (a)
+        3, // (c)
+        1, // (a)
+        1, // (a)
+        1, // (a)
+        3  // (c)
     )
 
     private var currentQuestionIndex = 0

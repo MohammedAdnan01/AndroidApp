@@ -62,6 +62,16 @@
             android:textColor="@color/txt_dark_grey"
             android:textSize="18sp"/>
 
+        <Button
+            android:id="@+id/ans_D"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:text="Ans D"
+            android:textColor="@color/txt_dark_grey"
+            android:textSize="18sp"/>
+
     </LinearLayout>
 
     <Button

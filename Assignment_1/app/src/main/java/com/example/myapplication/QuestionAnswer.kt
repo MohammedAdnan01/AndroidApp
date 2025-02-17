@@ -161,12 +161,14 @@ class QuestionAnswer : AppCompatActivity(), View.OnClickListener{
         ansA = findViewById(R.id.ans_A)
         ansB = findViewById(R.id.ans_B)
         ansC = findViewById(R.id.ans_C)
-        submitBtn = findViewById(R.id.submit_btn)
+        ansD = findViewById(R.id.ans_D)
+        subBtn = findViewById(R.id.submit_btn)
 
         ansA?.setOnClickListener(this)
         ansB?.setOnClickListener(this)
         ansC?.setOnClickListener(this)
-        submitBtn?.setOnClickListener(this)
+        ansD?.setOnClickListener(this)
+        subBtn?.setOnClickListener(this)
 
         loadNewQuestion()
     }
@@ -175,7 +177,7 @@ class QuestionAnswer : AppCompatActivity(), View.OnClickListener{
     private fun loadNewQuestion() {
 
         // Display only 4 questions
-        if(currentQuestionNumber >= 4 ){
+        if(currentQuestionNumber >= 10 ){
             finishQuiz();
             return;
         }
@@ -199,6 +201,7 @@ class QuestionAnswer : AppCompatActivity(), View.OnClickListener{
         ansA?.text = choices[ranIndex][0]
         ansB?.text = choices[ranIndex][1]
         ansC?.text = choices[ranIndex][2]
+        ansD?.text = choices[ranIndex][3]
     }
 
     //Generating random numbers to pick 4 questions from the list of 20 questions
@@ -225,6 +228,7 @@ class QuestionAnswer : AppCompatActivity(), View.OnClickListener{
         ansA?.setBackgroundColor(Color.WHITE)
         ansB?.setBackgroundColor(Color.WHITE)
         ansC?.setBackgroundColor(Color.WHITE)
+        ansD?.setBackgroundColor(Color.WHITE)
 
         val clickedButton = v as Button
         //If the submit button s clicked,
@@ -247,9 +251,10 @@ class QuestionAnswer : AppCompatActivity(), View.OnClickListener{
                 R.id.ans_A -> 1// Option A clicked
                 R.id.ans_B -> 2 // Option B clicked
                 R.id.ans_C -> 3 // Option C clicked
+                R.id.ans_D -> 4 // Option C clicked
                 else -> 0 // No option selected
             }
-            clickedButton.setBackgroundColor(Color.parseColor("#778899"))
+            clickedButton.setBackgroundColor(Color.parseColor("#FACE1D"))
         }
 
     }

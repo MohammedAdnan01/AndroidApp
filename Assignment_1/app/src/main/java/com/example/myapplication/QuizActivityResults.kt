@@ -20,7 +20,7 @@ class QuizActivityResults : AppCompatActivity() {
         scoreTextView  = findViewById(R.id.score)
 
         val score = intent.getIntExtra("SCORE", 0)
-        scoreTextView?.text = score.toString()+"/4"
+        scoreTextView?.text = score.toString()+"/10"
 
         // Return to Main Menu
         val buttonReturnScreen = findViewById<Button>(R.id.return_btn)

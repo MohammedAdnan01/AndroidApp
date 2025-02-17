@@ -31,4 +31,12 @@
         android:layout_width="210dp"
         android:layout_height="wrap_content"
         android:text="Back to Welcome Screen"/>
+
+    <ToggleButton
+        android:id="@+id/toggleMusic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOn="Music ON"
+        android:textOff="Music OFF"
+        android:checked="false"/>
 </LinearLayout>
