@@ -35,17 +35,7 @@ class QuizActivityReview : AppCompatActivity() {
         "Which African country is known as the “Cradle of Humankind”",
         "Which is the largest lake in Africa?",
         "What is the capital city of Spain?",
-        "Which country is known as “The Land of a Thousand Lakes”?",
-        "The Galapagos Islands, known for their unique wildlife, belong to which country?",
-        "Which country is the largest producer of oil in the world?",
-        "The Taj Mahal, a famous UNESCO World Heritage Site, is located in which country?",
-        "Which country is known for its fjords, volcanoes, and geothermal springs?",
-        "Which is the largest island in the Mediterranean Sea?",
-        "What is the capital city of Brazil?",
-        "Which country is known for its tulips, windmills, and cycling culture?",
-        "The Great Wall, one of the world’s most famous landmarks, is located in which country?",
-        "Which country is located in both Europe and Asia?",
-        "What is the highest mountain in North America?")
+        "Which country is known as “The Land of a Thousand Lakes”?")
 
     private val options = arrayOf(
         arrayOf("Atlantic Ocean","Pacific Ocean","Indian Ocean","Arctic Ocean"),
@@ -67,17 +57,7 @@ class QuizActivityReview : AppCompatActivity() {
         arrayOf("Kenya", "South Africa", "Egypt", "Ethiopia"),
         arrayOf("Lake Victoria", "Lake Tanganyika", "Lake Malawi", "Lake Chad"),
         arrayOf("Barcelona", "Seville", "Madrid", "Valencia"),
-        arrayOf("Sweden", "Norway", "Finland", "Canada"),
-        arrayOf("Ecuador", "Colombia", "Peru", "Costa Rica"),
-        arrayOf("Saudi Arabia", "Russia", "United States", "Canada"),
-        arrayOf("India", "China", "Pakistan", "Nepal"),
-        arrayOf("Norway", "Iceland", "New Zealand", "Chile"),
-        arrayOf("Sicily", "Cyprus", "Sardinia", "Crete"),
-        arrayOf("Rio de Janeiro", "São Paulo", "Brasília", "Salvador"),
-        arrayOf("Netherlands", "Belgium", "Denmark", "Switzerland"),
-        arrayOf("China", "Japan", "South Korea", "Mongolia"),
-        arrayOf("Turkey", "Greece", "Italy", "Ukraine"),
-        arrayOf("Mount Kilimanjaro", "Mount Everest", "Denali (Mount McKinley)", "Mount Fuji")
+        arrayOf("Sweden", "Norway", "Finland", "Canada")
     )
 
     var correctAnswers = arrayOf(
@@ -100,16 +80,6 @@ class QuizActivityReview : AppCompatActivity() {
         2, // (b)
         1, // (a)
         3, // (c)
-        3, // (c)
-        1, // (a)
-        1, // (a)
-        1, // (a)
-        2, // (b)
-        1, // (a)
-        3, // (c)
-        1, // (a)
-        1, // (a)
-        1, // (a)
         3  // (c)
     )
 
@@ -143,9 +113,9 @@ class QuizActivityReview : AppCompatActivity() {
 
                 when (idx) {
                     //if the user answered right the answer of the question is highlighted only in green
-                    correctOptionIndex -> setBackgroundColor(Color.GREEN)
+                    correctOptionIndex -> setBackgroundColor(Color.parseColor("#6FE340"))
                     //if the user answered wrong, the right answered is highlighted in green and the wrongly answered one is highlighted red
-                    selectedOptionIndex -> if (idx != correctOptionIndex) setBackgroundColor(Color.RED)
+                    selectedOptionIndex -> if (idx != correctOptionIndex) setBackgroundColor(Color.parseColor("#FA3C3C"))
                     //the third option is left with transparent background
                     else -> setBackgroundColor(Color.TRANSPARENT)
                 }

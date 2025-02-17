@@ -26,17 +26,17 @@ class QuizActivityResults : AppCompatActivity() {
         star3 = findViewById(R.id.star3)
 
         val score = intent.getIntExtra("SCORE", 0)
-        scoreTextView?.text = score.toString()+"/10"
+        scoreTextView?.text = score.toString()+"/4"
 
         when {
-            score >= 7 -> {
+            score >= 3 -> {
                 feedbackTextView?.text = "Excellent Job!"
                 star1?.setImageResource(R.drawable.ic_full_star)
                 star2?.setImageResource(R.drawable.ic_full_star)
                 star3?.setImageResource(R.drawable.ic_full_star)
             }
 
-            score > 3 -> {
+            score > 2 -> {
                 feedbackTextView?.text = "Good Effort!"
                 star1?.setImageResource(R.drawable.ic_full_star)
                 star2?.setImageResource(R.drawable.ic_full_star)

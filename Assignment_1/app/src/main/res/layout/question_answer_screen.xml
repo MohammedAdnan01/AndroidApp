@@ -18,7 +18,7 @@
         android:layout_gravity="center_horizontal"
         android:textAlignment="center"
         android:padding="10dp"
-        android:text="Question 1 of 10"
+        android:text="Question 1 of 4"
         android:textColor="@android:color/black"
         android:textSize="18sp" />
 
@@ -88,13 +88,13 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/submit_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/submit_btn"
-        android:text="NEXT"
-        android:background="#009A44"
         android:layout_below="@id/choices_layout"
         android:layout_marginTop="40dp"
-        android:textSize="20sp"/>
+        android:background="#04C75B"
+        android:text="NEXT"
+        android:textSize="20sp" />
 
 </RelativeLayout>

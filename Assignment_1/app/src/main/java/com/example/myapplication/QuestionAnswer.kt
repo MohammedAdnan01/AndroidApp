@@ -61,17 +61,7 @@ class QuestionAnswer : AppCompatActivity(), View.OnClickListener{
         "Which African country is known as the “Cradle of Humankind”",
         "Which is the largest lake in Africa?",
         "What is the capital city of Spain?",
-        "Which country is known as “The Land of a Thousand Lakes”?",
-        "The Galapagos Islands, known for their unique wildlife, belong to which country?",
-        "Which country is the largest producer of oil in the world?",
-        "The Taj Mahal, a famous UNESCO World Heritage Site, is located in which country?",
-        "Which country is known for its fjords, volcanoes, and geothermal springs?",
-        "Which is the largest island in the Mediterranean Sea?",
-        "What is the capital city of Brazil?",
-        "Which country is known for its tulips, windmills, and cycling culture?",
-        "The Great Wall, one of the world’s most famous landmarks, is located in which country?",
-        "Which country is located in both Europe and Asia?",
-        "What is the highest mountain in North America?"
+        "Which country is known as “The Land of a Thousand Lakes”?"
     )
 
     // The choices/option for the questions are presented as a nested array
@@ -95,17 +85,7 @@ class QuestionAnswer : AppCompatActivity(), View.OnClickListener{
         arrayOf("Kenya", "South Africa", "Egypt", "Ethiopia"),
         arrayOf("Lake Victoria", "Lake Tanganyika", "Lake Malawi", "Lake Chad"),
         arrayOf("Barcelona", "Seville", "Madrid", "Valencia"),
-        arrayOf("Sweden", "Norway", "Finland", "Canada"),
-        arrayOf("Ecuador", "Colombia", "Peru", "Costa Rica"),
-        arrayOf("Saudi Arabia", "Russia", "United States", "Canada"),
-        arrayOf("India", "China", "Pakistan", "Nepal"),
-        arrayOf("Norway", "Iceland", "New Zealand", "Chile"),
-        arrayOf("Sicily", "Cyprus", "Sardinia", "Crete"),
-        arrayOf("Rio de Janeiro", "São Paulo", "Brasília", "Salvador"),
-        arrayOf("Netherlands", "Belgium", "Denmark", "Switzerland"),
-        arrayOf("China", "Japan", "South Korea", "Mongolia"),
-        arrayOf("Turkey", "Greece", "Italy", "Ukraine"),
-        arrayOf("Mount Kilimanjaro", "Mount Everest", "Denali (Mount McKinley)", "Mount Fuji")
+        arrayOf("Sweden", "Norway", "Finland", "Canada")
     )
 
     // Answers of the respective questions are stored in an Array
@@ -129,16 +109,6 @@ class QuestionAnswer : AppCompatActivity(), View.OnClickListener{
         2, // (b)
         1, // (a)
         3, // (c)
-        3, // (c)
-        1, // (a)
-        1, // (a)
-        1, // (a)
-        2, // (b)
-        1, // (a)
-        3, // (c)
-        1, // (a)
-        1, // (a)
-        1, // (a)
         3  // (c)
     )
 
@@ -172,8 +142,8 @@ class QuestionAnswer : AppCompatActivity(), View.OnClickListener{
     // Function to navigate to the next question
     private fun loadNewQuestion() {
 
-        // Display only 10 questions
-        if(currentQuestionNumber >= 10 ){
+        // Display only 4 questions
+        if(currentQuestionNumber >= 4 ){
             finishQuiz();
             return;
         }
@@ -192,7 +162,7 @@ class QuestionAnswer : AppCompatActivity(), View.OnClickListener{
         ranIndex= randomIndex;
 
         // Displaying the progress in the quiz
-        progressTextView?.text = "Question ${currentQuestionNumber + 1} of 10"
+        progressTextView?.text = "Question ${currentQuestionNumber + 1} of 4"
 
         // Setting question and options based on index generated
         val randomQuestion = question[ranIndex]

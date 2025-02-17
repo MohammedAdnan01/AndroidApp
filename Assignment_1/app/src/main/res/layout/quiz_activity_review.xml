@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="#FDD5B1">
+    android:background="#bec3c6">
 
     <TextView
         android:id="@+id/questionTextView"
@@ -33,14 +33,14 @@
 
     <Button
         android:id="@+id/nextButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Next"
         android:layout_gravity="center_horizontal" />
 
     <Button
         android:id="@+id/returnMainMenu"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Return to Main Menu"
         android:layout_gravity="center_horizontal" />
