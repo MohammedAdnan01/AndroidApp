@@ -3,14 +3,11 @@ package com.example.myapplication
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.children
-import com.example.myapplication.QuestionAnswer.SharedData.selectedAnswerArray
 
 
 class QuizActivityReview : AppCompatActivity() {
@@ -133,7 +130,6 @@ class QuizActivityReview : AppCompatActivity() {
 
     //Displaying the questions that were randomly generated from the array
     private fun displayQuestion(index: Int) {
-        Log.d("TAG", "//////////////questionsIndicesToShow" + questionsIndicesToShow.contentToString())
         val questionIndex = questionsIndicesToShow[index]
         questionTextView.text = questions[questionIndex]
         optionsContainer.removeAllViews()

@@ -1,33 +1,26 @@
 package com.example.myapplication
 
-import android.app.Activity
 import android.content.Intent
-import android.graphics.drawable.ColorDrawable
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import kotlin.random.Random
 import android.graphics.Color
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.QuestionAnswer.SharedData.generatedNumbers
 import com.example.myapplication.QuestionAnswer.SharedData.selectedAnswerArray
-import com.example.myapplication.QuizActivityResults
 
 class QuestionAnswer : AppCompatActivity(), View.OnClickListener{
 
-    // User Interface: This screen is the Trivia Game play part. The user is presented with four questions each having three options.
-    // User will choose an option and then click on Submit button to navigate to the next question.
-
     private var currentQuestionNumber =0
+
     // Background colour to display the questions upon
     private val availableColors = mutableListOf(
-        Color.parseColor("#FE9900"), // Orange
-        Color.parseColor("#FFDE59"), // light yellow
-        Color.parseColor("#7DDA58"), // light green
-        Color.parseColor("#5DE2E7"), // light Blue
+        Color.parseColor("#FE9900"),
+        Color.parseColor("#FFDE59"),
+        Color.parseColor("#7DDA58"),
+        Color.parseColor("#5DE2E7"),
         Color.parseColor("#CC6CE7"),
         Color.parseColor("#DFC57B"),
         Color.parseColor("#E2EAF4"),
@@ -35,6 +28,8 @@ class QuestionAnswer : AppCompatActivity(), View.OnClickListener{
         Color.parseColor("#EFC3CA"),
         Color.parseColor("#E7DDFF")
     )
+
+    private var progressTextView: TextView? = null
     private var questionTextView: TextView? = null
     private var ansA: Button? = null
     private var ansB: Button? = null
@@ -157,6 +152,7 @@ class QuestionAnswer : AppCompatActivity(), View.OnClickListener{
         super.onCreate(savedInstanceState)
         setContentView(R.layout.question_answer_screen)
 
+        progressTextView = findViewById(R.id.progress_text)
         questionTextView = findViewById(R.id.question)
         ansA = findViewById(R.id.ans_A)
         ansB = findViewById(R.id.ans_B)
@@ -176,7 +172,7 @@ class QuestionAnswer : AppCompatActivity(), View.OnClickListener{
     // Function to navigate to the next question
     private fun loadNewQuestion() {
 
-        // Display only 4 questions
+        // Display only 10 questions
         if(currentQuestionNumber >= 10 ){
             finishQuiz();
             return;
@@ -194,6 +190,9 @@ class QuestionAnswer : AppCompatActivity(), View.OnClickListener{
 
         val randomIndex = getRandomNumber(question.size)
         ranIndex= randomIndex;
+
+        // Displaying the progress in the quiz
+        progressTextView?.text = "Question ${currentQuestionNumber + 1} of 10"
 
         // Setting question and options based on index generated
         val randomQuestion = question[ranIndex]
@@ -242,7 +241,6 @@ class QuestionAnswer : AppCompatActivity(), View.OnClickListener{
 
             //Capturing and adding the user's answer into a List
             selectedAnswerArray.add(selectedAnswer)
-            Log.d("TAG", "*****selectedANswer array in questans****" + selectedAnswerArray.toString())
             loadNewQuestion()
 
         } else {
@@ -258,8 +256,4 @@ class QuestionAnswer : AppCompatActivity(), View.OnClickListener{
         }
 
     }
-
-
-
-
 }
